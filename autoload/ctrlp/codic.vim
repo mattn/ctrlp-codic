@@ -34,6 +34,9 @@ endfunc
 
 function! ctrlp#codic#matcher(items, input, limit, mmode, ispath, crfile, regex)
 	silent! let items = codic#search(a:input, 0)
+  if type(items) == type(0)
+    return []
+  endif
 	return map(items, 'v:val["label"] . ":\t" . join(map(copy(v:val["values"]), "v:val[\"word\"]"), ",")')
 endfunction
 
