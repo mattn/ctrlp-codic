@@ -1,1 +1,1 @@
-command! CtrlPCodic call ctrlp#codic#init()
+command! CtrlPCodic call ctrlp#codic#start()
